@@ -1,5 +1,9 @@
 #!/bin/bash
 
+host="$1"
+ssid="$2"
+passphrase="$3"
+
 echo "Setting timezone..."
 ln -sf /usr/share/zoneinfo/US/Mountain /etc/localtime
 
