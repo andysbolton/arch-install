@@ -2,6 +2,8 @@
 
 Personal scripts for setting up Arch Linux.
 
+Steps:
+
 1. Boot into live environment
 
 2. Connect to the internet
