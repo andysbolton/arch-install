@@ -1,0 +1,10 @@
+# IPv4 Hosts
+127.0.0.1   localhost HOSTNAME
+
+# Machine FQDN
+127.0.1.1   HOSTNAME.localdomain   HOSTNAME
+
+# IPv6 Hosts
+::1     localhost   ip6-localhost   ip6-loopback
+ff02::1     ip6-allnodes
+ff02::2     ip6-allrouters

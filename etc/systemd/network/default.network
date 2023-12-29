@@ -1,0 +1,5 @@
+[Match]
+Name=INTERFACE
+
+[Network]
+DHCP=yes
