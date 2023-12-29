@@ -39,4 +39,13 @@ Run `partition-disk.sh` if using my Dell Latitude E6320 (nb this will wipe the d
 
 5. Run `install.sh`
 
-   This script will: (TODO :)
+   This script will:
+
+   - Set system time
+   - Optimize pacman mirror list with reflector
+   - Install base packages
+   - chroot into the system and:
+     - Generate locale
+     - Set hostname
+     - Install and set up bootloader
+     - Set up wpa_supplicant, systemd-resolved, and systemd-networkd

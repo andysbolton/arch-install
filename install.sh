@@ -21,7 +21,7 @@ fi
 
 read -r -p "Enter hostname: " host
 
-echo "Updating system clock..."
+echo "Updating system clock..."|
 timedatectl set-ntp true
 
 echo "Optimizing mirror list..."
