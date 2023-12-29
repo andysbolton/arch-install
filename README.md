@@ -2,11 +2,9 @@
 
 Personal scripts for setting up Arch Linux.
 
-# Steps
+## Boot into live environment
 
-1. Boot into live environment
-
-2. Connect to the internet
+## Connect to the internet
 
 ```bash
 # exporting these as they're used by the install.sh script
@@ -16,7 +14,7 @@ interface="interface" # can be retrieved by `ip link` or `iw dev | awk '$1=="Int
 iwctl --passphrase "$PASSPHRASE" station "$interface" connect "$SSID"
 ```
 
-3. Clone this repo
+## Clone this repo
 
 ```bash
 pacman -Syy git
@@ -24,7 +22,7 @@ git clone https://github.com/andysbolton/arch-install
 cd arch-install
 ```
 
-4. Partition the disks
+## Partition the disks
 
 The `install.sh` script assumes a four-partition scheme like below.
 
@@ -37,15 +35,15 @@ Run `partition-disk.sh` if using my Dell Latitude E6320 (nb this will wipe the d
 | /dev/sdx3 | 25GB          | Linux fileystem  | /      | ext      |
 | /dev/sdx4 | 195.4G        | Linux filesystem | /home  | ext      |
 
-5. Run `install.sh`
+## Run `install.sh`
 
-   This script will:
+This script will:
 
-   - Set system time
-   - Optimize pacman mirror list with reflector
-   - Install base packages
-   - chroot into the system and:
-     - Generate locale
-     - Set hostname
-     - Install and set up bootloader
-     - Set up wpa_supplicant, systemd-resolved, and systemd-networkd
+- Set system time
+- Optimize pacman mirror list with reflector
+- Install base packages
+- chroot into the system and:
+  - Generate locale
+  - Set hostname
+  - Install and set up bootloader
+  - Set up wpa_supplicant, systemd-resolved, and systemd-networkd
