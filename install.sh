@@ -2,7 +2,10 @@
 
 set -e
 
-interface=$(iw dev | awk '$1=="Interface"{print $2}')
+if ! ping -c 3 google.com; then
+    echo "No internet connection."
+    exit 1
+fi
 
 if [ -z "$PASSPHRASE" ]; then
     echo "PASSPHRASE is not set."
@@ -15,8 +18,6 @@ if [ -z "$SSID" ]; then
 fi
 
 read -r -p "Enter hostname: " host
-
-iwctl --passphrase "$PASSPHRASE" station "$interface" connect "$SSID"
 
 echo "Updating system clock..."
 timedatectl set-ntp true
