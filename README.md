@@ -1,6 +1,6 @@
 # arch-install
 
-Personal script for setting up Arch Linux.
+Personal scripts for setting up Arch Linux.
 
 # Steps
 
@@ -26,7 +26,7 @@ cd arch-install
 
 4. Partition the disks
 
-This script assumes a four-partition scheme like below.
+The `install.sh` script assumes a four-partition scheme like below.
 Run `partition-disk.sh` if using my Dell Latitude E6320, which is hardcoded to add the following partitions:
 
 | disk      | size          | partition type   | mount  | filetype |
