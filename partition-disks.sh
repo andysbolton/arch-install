@@ -5,8 +5,8 @@ set -ex
 sfdisk /dev/sda <sda.sfdisk
 
 mkfs.fat -F32 -n BOOT /dev/sda1
-mkfs.ext4 -n ROOT /dev/sda3
-mkfs.ext4 -n HOME /dev/sda4
+mkfs.ext4 -L ROOT /dev/sda3
+mkfs.ext4 -L HOME /dev/sda4
 
 mkswap -L SWAP /dev/sda2
 swapon /dev/sda2
