@@ -21,7 +21,7 @@ echo "Installing base system..."
 pacstrap /mnt base base-devel linux linux-firmware \
     nvim less which man-db man-pages intel-ucode \
     wpa_supplicant systemd-resolved systemd-networkd fish \
-    iw
+    iw git
 
 echo "Generating fstab..."
 genfstab -U /mnt >>/mnt/etc/fstab

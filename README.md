@@ -15,6 +15,7 @@ iwctl --passphrase "$passphrase" station "$interface" connect "$ssid"
 3. Clone this repo
 
 ```bash
+pacman -Sy git
 git clone https://github.com/andysbolton/arch-install
 cd arch-install
 ```

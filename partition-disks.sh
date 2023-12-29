@@ -2,7 +2,7 @@
 
 set -ex
 
-sfdisk /dev/sda <sda.fdisk
+sfdisk /dev/sda <./sda.fdisk
 
 mkfs.fat -F32 -n BOOT/dev/sda1
 mkfs.ext4 -n SWAP /dev/sda2
