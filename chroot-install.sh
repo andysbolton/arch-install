@@ -11,7 +11,7 @@ hwclock --systohc
 
 echo "Setting locale..."
 sed -i 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
-local-gen
+locale-gen
 echo "LANG=en_US.UTF-8" >/etc/locale.conf
 
 echo "Setting hostname..."
