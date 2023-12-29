@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 host="$1"
 ssid="$2"
 passphrase="$3"
