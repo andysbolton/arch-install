@@ -1,12 +1,12 @@
 #!/bin/bash
 
-set -ex
+set -e
 
 interface=$(iw dev | awk '$1=="Interface"{print $2}')
 
-read -pr "Enter hostname: " host
-read -pr "Enter SSID: " ssid
-read -pr "Enter network passphrase: " passphrase
+read -r -p "Enter hostname: " host
+read -r -p "Enter SSID: " ssid
+read -r -p "Enter network passphrase: " passphrase
 
 iwctl --passphrase "$passphrase" station "$interface" connect "$ssid"
 
