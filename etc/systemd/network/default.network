@@ -1,5 +1,5 @@
 [Match]
-Name=INTERFACE
+Name=%INTERFACE%
 
 [Network]
 DHCP=yes
