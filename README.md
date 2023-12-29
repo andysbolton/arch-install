@@ -19,7 +19,7 @@ iwctl --passphrase "$PASSPHRASE" station "$interface" connect "$SSID"
 3. Clone this repo
 
 ```bash
-pacman -Sy git
+pacman -Syy git
 git clone https://github.com/andysbolton/arch-install
 cd arch-install
 ```
@@ -27,7 +27,8 @@ cd arch-install
 4. Partition the disks
 
 The `install.sh` script assumes a four-partition scheme like below.
-Run `partition-disk.sh` if using my Dell Latitude E6320, which is hardcoded to add the following partitions:
+
+Run `partition-disk.sh` if using my Dell Latitude E6320 (nb this will wipe the disk!!!). The script is hardcoded to add the following partitions:
 
 | disk      | size          | partition type   | mount  | filetype |
 | --------- | ------------- | ---------------- | ------ | -------- |
@@ -37,4 +38,5 @@ Run `partition-disk.sh` if using my Dell Latitude E6320, which is hardcoded to a
 | /dev/sdx4 | 195.4G        | Linux filesystem | /home  | ext      |
 
 5. Run `install.sh`
+
    This script will:

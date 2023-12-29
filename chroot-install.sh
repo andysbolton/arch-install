@@ -27,9 +27,6 @@ cp boot/loader/loader.conf /boot/loader/loader.conf
 cp boot/loader/entries/arch.conf /boot/loader/entries/arch.conf
 
 echo "Setting up systemd-resoved..."
-# We'll create the following symlink outside of the chroot once we've exited it at the end of the script.
-# Otherwise, per https://wiki.archlinux.org/title/Systemd-resolved, the link won't be persisted.
-# ln -sf ../run/systemd/resolve/stub-resolv.conf /mnt/etc/resolv.conf
 systemctl enable systemd-resolved.service
 
 # Requery the interface name as systemd is now in use which alters it.
