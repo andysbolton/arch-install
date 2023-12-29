@@ -7,7 +7,7 @@ if ! ping -c 3 google.com >/dev/null; then
     echo "No internet connection."
     exit 1
 fi
-echo "Connected."
+echo "Connection OK."
 
 if [ -z "$PASSPHRASE" ]; then
     echo "PASSPHRASE is not set."

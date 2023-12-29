@@ -39,4 +39,4 @@ Run `partition-disk.sh` if using my Dell Latitude E6320 (nb this will wipe the d
 
 5. Run `install.sh`
 
-   This script will:
+   This script will: (TODO :)
