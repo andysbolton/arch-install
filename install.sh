@@ -15,26 +15,24 @@ if [ -z "$SSID" ]; then
 fi
 
 read -r -p "Enter hostname: " host
-# read -r -p "Enter SSID: " ssid
-# read -r -p "Enter network passphrase: " passphrase
 
-# iwctl --passphrase "$passphrase" station "$interface" connect "$ssid"
-#
-# echo "Updating system clock..."
-# timedatectl set-ntp true
-#
-# echo "Optimizing mirror list..."
-# reflector -c 'US' -a 15 -p https --sort rate --save /etc/pacman.d/mirrorlist
-# pacman -Syy
-#
-# echo "Installing base system..."
-# pacstrap /mnt base base-devel linux linux-firmware \
-#     neovim less which man-db man-pages intel-ucode \
-#     wpa_supplicant fish iw git
-#
-# echo "Generating fstab..."
-# genfstab -U /mnt >>/mnt/etc/fstab
-#
+iwctl --passphrase "$PASSPHRASE" station "$interface" connect "$SSID"
+
+echo "Updating system clock..."
+timedatectl set-ntp true
+
+echo "Optimizing mirror list..."
+reflector -c 'US' -a 15 -p https --sort rate --save /etc/pacman.d/mirrorlist
+pacman -Syy
+
+echo "Installing base system..."
+pacstrap /mnt base base-devel linux linux-firmware \
+    neovim less which man-db man-pages intel-ucode \
+    wpa_supplicant fish iw git
+
+echo "Generating fstab..."
+genfstab -U /mnt >>/mnt/etc/fstab
+
 cp chroot-install.sh /mnt/setup/chroot-install.sh
 cp -r boot/ /mnt/setup/boot/
 cp -r etc/ /mnt/setup/etc/
