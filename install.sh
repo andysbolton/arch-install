@@ -25,8 +25,8 @@ read -r -p "Enter hostname: " host
 # echo "Generating fstab..."
 # genfstab -U /mnt >>/mnt/etc/fstab
 #
-# cp chroot-install.sh /mnt
-# echo "chroot into new system"
+cp chroot-install.sh /mnt
+echo "chroot into new system"
 arch-chroot /mnt "./chroot-install.sh" "$host" "$SSID" "$PASSPHRASE"
 rm /mnt/chroot-install.sh
 
