@@ -39,7 +39,7 @@ cp chroot-install.sh /mnt/setup/chroot-install.sh
 cp -r boot/ /mnt/setup/boot/
 cp -r etc/ /mnt/setup/etc/
 echo "chroot into new system"
-arch-chroot /mnt "cd setup && ./chroot-install.sh" "$host" "$SSID" "$PASSPHRASE"
+arch-chroot /mnt /bin/bash "-c" "cd setup && ./chroot-install.sh \"$host\" \"$SSID\" \"$PASSPHRASE\""
 rm -rf /mnt/setup
 
 echo "Setting stub link for systemd-resolved..."
