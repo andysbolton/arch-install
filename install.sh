@@ -2,7 +2,7 @@
 
 set -e
 
-if ! ping -c 3 google.com; then
+if ! ping -c 3 google.com >/dev/null; then
     echo "No internet connection."
     exit 1
 fi
@@ -45,4 +45,5 @@ rm -rf /mnt/setup
 echo "Setting stub link for systemd-resolved..."
 ln -sf ../run/systemd/resolve/stub-resolv.conf /mnt/etc/resolv.conf
 
+echo ""
 echo "Setup finished. To complete, run umount -R /mnt and reboot."

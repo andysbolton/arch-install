@@ -29,8 +29,8 @@ cp boot/loader/entries/arch.conf /boot/loader/entries/arch.conf
 echo "Setting up systemd-resoved..."
 systemctl enable systemd-resolved.service
 
-# Requery the interface name as systemd is now in use which alters it.
-interface=$(iw dev | awk '$1=="Interface"{print $2}')
+# Anticipating the change systemd will make to the interface name
+interface="wlp2s0"
 
 echo "Setting up systemd-networkd..."
 wpa_passphrase "$ssid" "$passphrase" >"/etc/wpa_supplicant/wpa_supplicant-$interface.conf"
